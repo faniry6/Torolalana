@@ -130,7 +130,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.openchord"
+        applicationId "com.unidir"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 12
