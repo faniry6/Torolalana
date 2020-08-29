@@ -11,6 +11,7 @@ import SongList from './containers/SongList';
 import TabBarIcon from './components/TabBarIcon';
 import OnlineSearch from './containers/OnlineSearch';
 import SongPreview from './containers/SongPreview';
+import FiliereView from './containers/FiliereView';
 import OnlineArtistView from './containers/OnlineArtistView';
 import SongEdit from './containers/SongEdit';
 import PlaylistList from './containers/PlaylistList';
@@ -130,6 +131,7 @@ export type RootStackParamList = {
   PlaylistView: {id: string; title: string};
   PlaylistAddSongs: {id: string};
   PlaylistEdit: {id: string};
+  FiliereView: {id: string; name: string};
 };
 const RootStack = createStackNavigator<RootStackParamList>();
 const AppNavigation = () => {
@@ -160,6 +162,11 @@ const AppNavigation = () => {
         name="SongView"
         component={SongView}
         options={({route}) => ({title: route.params.title})}
+      />
+      <RootStack.Screen
+        name="FiliereView"
+        component={FiliereView}
+        options={({route}) => ({title: route.params.name})}
       />
       <RootStack.Screen name="SongEdit" component={SongEdit} />
       <RootStack.Screen
