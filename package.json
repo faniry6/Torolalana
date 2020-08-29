@@ -9,6 +9,7 @@
     "build:ios": "node node_modules/react-native/local-cli/cli.js run-ios",
     "build:bundle": "cd android && ./gradlew bundleRelease",
     "build:release": "cd android && ./gradlew assembleRelease",
+    "build:database": "node_modules/.bin/ts-node generate_database.ts",
     "test": "jest",
     "lint": "eslint ."
   },
