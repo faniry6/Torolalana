@@ -9,8 +9,13 @@ export class Filiere {
   bacc!: string;
   location!: string;
   updated_at!: Date;
-  inscription_open!: Date;
-  inscription_closed!: Date;
+  inscription_open!: string;
+  inscription_closed!: string;
+  fees!: string;
+  bank_account!: string;
+  bank_account_owner!: string;
+  admission!: string;
+  document!: string;
 
   static schema: Realm.ObjectSchema = {
     name: 'Filiere',
@@ -23,6 +28,11 @@ export class Filiere {
       location: 'string',
       inscription_open: 'string',
       inscription_closed: 'string',
+      admission: 'string',
+      document: 'string',
+      fees: 'string',
+      bank_account: 'string',
+      bank_account_owner: 'string',
     },
   };
   static search(query: string) {
@@ -59,6 +69,7 @@ export class Filiere {
     if (this.shouldUpdateDb()) {
       let data = allFiliere.data;
       for (var i = 0; i < data.length; i++) {
+        console.log(i);
         let id = uuid();
         let name = data[i].name;
         let description = data[i].description;
@@ -66,6 +77,12 @@ export class Filiere {
         let inscription_open = data[i].inscription_open;
         let inscription_closed = data[i].inscription_closed;
         let bacc = data[i].bacc;
+        let admission = data[i].admission;
+        let document = data[i].document;
+        let fees = data[i].fees;
+        let bank_account = data[i].bank_account;
+        let bank_account_owner = data[i].bank_account_owner;
+
         realm.write(() => {
           realm.create<Filiere>('Filiere', {
             id,
@@ -75,6 +92,11 @@ export class Filiere {
             location,
             inscription_open,
             inscription_closed,
+            admission,
+            document,
+            fees,
+            bank_account,
+            bank_account_owner,
           });
         });
       }

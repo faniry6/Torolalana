@@ -24,17 +24,6 @@ type FiliereListScreenNavigationProp = CompositeNavigationProp<
 type Props = {
   navigation: FiliereListScreenNavigationProp;
 };
-const data = [
-  {id: 1, filiere: 'Mathematique & Physique'},
-  {id: 2, filiere: 'Physique Chimie'},
-  {id: 3, filiere: 'Science Naturelle'},
-  {id: 4, filiere: 'MISA'},
-  {id: 5, filiere: 'Physique Nucleaire'},
-  {id: 6, filiere: 'DEGS'},
-  {id: 7, filiere: 'Polytechnique'},
-  {id: 8, filiere: 'ENI'},
-  {id: 9, filiere: 'IST'},
-];
 
 const FiliereList = (props: Props) => {
   const [filiere, setArtists] = useState(Filiere.getAll());
@@ -47,8 +36,8 @@ const FiliereList = (props: Props) => {
     }
     setIsLoading(false);
   }, [isLoading]);
-  function onSelectFiliere(id: string, filiere: string) {
-    props.navigation.navigate('FiliereView', {id, filiere});
+  function onSelectFiliere(id: string, name: string) {
+    props.navigation.navigate('FiliereView', {id, name});
   }
 
   return (
