@@ -12,6 +12,7 @@ import TabBarIcon from './components/TabBarIcon';
 import OnlineSearch from './containers/OnlineSearch';
 import SongPreview from './containers/SongPreview';
 import FiliereView from './containers/FiliereView';
+import FiliereListView from './containers/FiliereListView';
 import OnlineArtistView from './containers/OnlineArtistView';
 import SongEdit from './containers/SongEdit';
 import PlaylistList from './containers/PlaylistList';
@@ -109,14 +110,14 @@ const MainTab = () => {
         }}
         component={SongList}
       /> */}
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Settings"
         options={{
           title: t('settings'),
           tabBarIcon: props => <TabBarIcon {...props} name="cog" />,
         }}
         component={SettingsTab}
-      />
+      /> */}
     </Tab.Navigator>
   );
 };
@@ -132,6 +133,7 @@ export type RootStackParamList = {
   PlaylistAddSongs: {id: string};
   PlaylistEdit: {id: string};
   FiliereView: {id: string; name: string};
+  FiliereListView: {id: string; filter: string};
 };
 const RootStack = createStackNavigator<RootStackParamList>();
 const AppNavigation = () => {
@@ -167,6 +169,11 @@ const AppNavigation = () => {
         name="FiliereView"
         component={FiliereView}
         options={({route}) => ({title: route.params.name})}
+      />
+      <RootStack.Screen
+        name="FiliereListView"
+        component={FiliereListView}
+        options={({route}) => ({title: route.params.filter})}
       />
       <RootStack.Screen name="SongEdit" component={SongEdit} />
       <RootStack.Screen

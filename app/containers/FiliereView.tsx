@@ -37,6 +37,7 @@ const FiliereView: FunctionComponent<Props> = props => {
   const [inscription_open, setInscriptionOpen] = useState<string>('');
   const [inscription_close, setInscriptionClose] = useState<string>('');
   const [document, setDocument] = useState<string>('');
+
   useEffect(() => {
     let filiere = Filiere.getById(filiereId)!;
     setTitle(filiere.name);
