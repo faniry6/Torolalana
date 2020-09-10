@@ -26,16 +26,17 @@ type Props = {
 };
 
 const FiliereList = (props: Props) => {
-  const [filiere, setArtists] = useState(Filiere.getAll());
+  const [filiere, setFiliere] = useState(Filiere.getAll());
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    if (Filiere.shouldUpdateDb()) {
-      Filiere.populateDb();
-      setArtists(Filiere.getAll());
-    }
-    setIsLoading(false);
-  }, [isLoading]);
+  // useEffect(() => {
+  //   if (Filiere.shouldUpdateDb()) {
+  //     Filiere.populateDb();
+  //     setFiliere(Filiere.getAll());
+  //   }
+  //   setIsLoading(false);
+  // }, [isLoading]);
+
   function onSelectFiliere(id: string, name: string) {
     props.navigation.navigate('FiliereView', {id, name});
   }

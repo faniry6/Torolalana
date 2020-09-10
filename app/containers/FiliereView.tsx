@@ -12,6 +12,7 @@ import {Filiere} from '../db';
 import {RootStackParamList} from '../AppNavigation';
 import {RouteProp} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
+import {ScrollView} from 'react-native-gesture-handler';
 
 type FiliereViewScreenRouteProp = RouteProp<RootStackParamList, 'FiliereView'>;
 type FiliereViewScreenNavigationProp = StackNavigationProp<
@@ -55,84 +56,86 @@ const FiliereView: FunctionComponent<Props> = props => {
 
   return (
     <View style={styles.content}>
-      <Text style={styles.baseText}>
-        <Text style={styles.titleText}>
-          {'Bacc'}
-          {'\n'}
+      <ScrollView>
+        <Text style={styles.baseText}>
+          <Text style={styles.titleText}>
+            {'Bacc'}
+            {'\n'}
+          </Text>
+          <Text>
+            {bacc}
+            {'\n'}
+            {'\n'}
+          </Text>
+          <Text style={styles.titleText}>
+            {'Description'}
+            {'\n'}
+          </Text>
+          <Text numberOfLines={5}>
+            {description}
+            {'\n'}
+            {'\n'}
+          </Text>
+          <Text style={styles.titleText}>
+            {'Dossiers'}
+            {'\n'}
+          </Text>
+          <Text>
+            {document}
+            {'\n'}
+            {'\n'}
+          </Text>
+          <Text style={styles.titleText}>
+            {'Admission'}
+            {'\n'}
+          </Text>
+          <Text>
+            {admission}
+            {'\n'}
+            {'\n'}
+          </Text>
+          <Text style={styles.titleText}>
+            {"Frais d'inscription"}
+            {'\n'}
+          </Text>
+          <Text>
+            {fees}
+            {'\n'}
+            {'\n'}
+          </Text>
+          <Text style={styles.titleText}>
+            {'Compte de transfert'}
+            {'\n'}
+          </Text>
+          <Text>
+            {bank_account}
+            {' adresser a '}
+            {bank_account_owner}
+            {'\n'}
+            {'\n'}
+          </Text>
+          <Text style={styles.titleText}>
+            {'Location'}
+            {'\n'}
+          </Text>
+          <Text>
+            {location}
+            {'\n'}
+            {'\n'}
+          </Text>
+          <Text style={styles.titleText}>
+            {"Ouverture d'inscription"}
+            {'\n'}
+          </Text>
+          <Text>
+            {inscription_open}
+            {' - '}
+            {inscription_close}
+            {'\n'}
+            {'\n'}
+          </Text>
         </Text>
-        <Text>
-          {bacc}
-          {'\n'}
-          {'\n'}
-        </Text>
-        <Text style={styles.titleText}>
-          {'Description'}
-          {'\n'}
-        </Text>
-        <Text numberOfLines={5}>
-          {description}
-          {'\n'}
-          {'\n'}
-        </Text>
-        <Text style={styles.titleText}>
-          {'Dossiers'}
-          {'\n'}
-        </Text>
-        <Text>
-          {document}
-          {'\n'}
-          {'\n'}
-        </Text>
-        <Text style={styles.titleText}>
-          {'Concours'}
-          {'\n'}
-        </Text>
-        <Text>
-          {admission}
-          {'\n'}
-          {'\n'}
-        </Text>
-        <Text style={styles.titleText}>
-          {"Frais d'inscription"}
-          {'\n'}
-        </Text>
-        <Text>
-          {fees}
-          {'\n'}
-          {'\n'}
-        </Text>
-        <Text style={styles.titleText}>
-          {'Compte de transfert'}
-          {'\n'}
-        </Text>
-        <Text>
-          {bank_account}
-          {' adresser a '}
-          {bank_account_owner}
-          {'\n'}
-          {'\n'}
-        </Text>
-        <Text style={styles.titleText}>
-          {'Location'}
-          {'\n'}
-        </Text>
-        <Text>
-          {location}
-          {'\n'}
-          {'\n'}
-        </Text>
-        <Text style={styles.titleText}>
-          {"Ouverture d'inscription"}
-          {'\n'}
-        </Text>
-        <Text>
-          {inscription_open}
-          {' - '}
-          {inscription_close}
-          {'\n'}
-          {'\n'}
-        </Text>
-      </Text>
+      </ScrollView>
     </View>
   );
 };
