@@ -1,4 +1,4 @@
-package com.openchord;
+package com.unidir;
 
 import android.app.Application;
 import android.util.Log;
