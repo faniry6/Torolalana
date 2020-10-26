@@ -1,3 +1,4 @@
+import {Orient} from 'react-native-svg';
 import uuid from 'uuid';
 import realm from '.';
 import allFiliere from '../assets/database.json';
@@ -6,7 +7,7 @@ export class Filiere {
   id!: string;
   name!: string;
   description!: string;
-  bacc!: string;
+  bacc!: string[];
   location!: string;
   updated_at!: Date;
   inscription_open!: string;
@@ -16,6 +17,7 @@ export class Filiere {
   bank_account_owner!: string;
   admission!: string;
   document!: string;
+  faculty!: string;
 
   static schema: Realm.ObjectSchema = {
     name: 'Filiere',
@@ -24,7 +26,7 @@ export class Filiere {
       id: 'string',
       name: 'string',
       description: 'string',
-      bacc: 'string',
+      bacc: 'string?[]',
       location: 'string',
       inscription_open: 'string',
       inscription_closed: 'string',
@@ -33,6 +35,7 @@ export class Filiere {
       fees: 'string',
       bank_account: 'string',
       bank_account_owner: 'string',
+      faculty: 'string',
     },
   };
   static search(query: string) {
@@ -43,10 +46,11 @@ export class Filiere {
   static getById(id: string) {
     return realm.objectForPrimaryKey<Filiere>('Filiere', id);
   }
-  static getByBacc(bacc: string) {
+  static getByBacc(query: string) {
+    var object = realm.objects<Filiere>('Filiere');
     return realm
       .objects<Filiere>('Filiere')
-      .filtered('bacc = $0', bacc)
+      .filtered('bacc CONTAINS $0', query)
       .sorted('name');
   }
 
@@ -69,7 +73,6 @@ export class Filiere {
     if (this.shouldUpdateDb()) {
       let data = allFiliere.data;
       for (var i = 0; i < data.length; i++) {
-        console.log(i);
         let id = uuid();
         let name = data[i].name;
         let description = data[i].description;
@@ -82,9 +85,11 @@ export class Filiere {
         let fees = data[i].fees;
         let bank_account = data[i].bank_account;
         let bank_account_owner = data[i].bank_account_owner;
-
+        let updated_at = new Date();
+        let faculty = data[i].faculty;
         realm.write(() => {
           realm.create<Filiere>('Filiere', {
+            updated_at,
             id,
             name,
             description,
@@ -97,6 +102,7 @@ export class Filiere {
             fees,
             bank_account,
             bank_account_owner,
+            faculty,
           });
         });
       }

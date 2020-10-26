@@ -6,7 +6,7 @@ import {RouteProp, CurrentRenderContext} from '@react-navigation/native';
 import {RootStackParamList} from '../AppNavigation';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {alertDelete} from '../utils/alertDelete';
-import {Filiere} from '../db';
+import {Filiere, Bacc} from '../db';
 
 type FiliereListViewScreenRouteProp = RouteProp<
   RootStackParamList,
@@ -26,7 +26,7 @@ const FiliereListView: FC<Props> = props => {
   let filter = props.route.params.filter;
   let filiere;
 
-  if (['A1', 'A2', 'C', 'D', 'Tech'].indexOf(filter) > -1) {
+  if (Bacc.search(filter).length > 0) {
     filiere = Filiere.getByBacc(filter);
   } else {
     filiere = Filiere.getByLocation(filter);

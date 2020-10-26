@@ -110,14 +110,14 @@ const MainTab = () => {
         }}
         component={SongList}
       /> */}
-      {/* <Tab.Screen
+      <Tab.Screen
         name="Settings"
         options={{
           title: t('settings'),
           tabBarIcon: props => <TabBarIcon {...props} name="cog" />,
         }}
         component={SettingsTab}
-      /> */}
+      />
     </Tab.Navigator>
   );
 };

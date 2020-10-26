@@ -7,6 +7,7 @@ import LanguageContext, {
 } from './app/languages/LanguageContext';
 import {GlobalSettings} from './app/db/GlobalSettings';
 import {Filiere} from './app/db/Filiere';
+import {Bacc} from './app/db';
 
 const LoadLanguage = () => {
   const {changeLanguage} = useContext(LanguageContext);
@@ -21,6 +22,9 @@ const LoadDatabase = () => {
   useEffect(() => {
     if (Filiere.shouldUpdateDb()) {
       Filiere.populateDb();
+    }
+    if (Bacc.shouldUpdateDb()) {
+      Bacc.populateDb();
     }
   }, []);
   return null;

@@ -29,7 +29,7 @@ const FiliereView: FunctionComponent<Props> = props => {
   const filiereId = props.route.params.id;
   const [description, setDescription] = useState<string>('');
   const [name, setTitle] = useState<string>('');
-  const [bacc, setBacc] = useState<string>('');
+  const [bacc, setBacc] = useState<string[]>([]);
   const [fees, setFees] = useState<string>('');
   const [bank_account, setBank] = useState<string>('');
   const [bank_account_owner, setBankOwner] = useState<string>('');
@@ -38,6 +38,7 @@ const FiliereView: FunctionComponent<Props> = props => {
   const [inscription_open, setInscriptionOpen] = useState<string>('');
   const [inscription_close, setInscriptionClose] = useState<string>('');
   const [document, setDocument] = useState<string>('');
+  const [faculty, setFaculty] = useState<string>('');
 
   useEffect(() => {
     let filiere = Filiere.getById(filiereId)!;
@@ -52,8 +53,17 @@ const FiliereView: FunctionComponent<Props> = props => {
     setBank(filiere.bank_account);
     setBankOwner(filiere.bank_account_owner);
     setAdmission(filiere.admission);
+    setFaculty(filiere.faculty);
   }, []);
 
+  function renderBacc(bacc: string[]) {
+    var s = '';
+    for (let e in bacc) {
+      s += bacc[e] + ', ';
+    }
+    return s.slice(0, -2);
+    //return bacc[0];
+  }
   return (
     <View style={styles.content}>
       <ScrollView>
@@ -63,7 +73,7 @@ const FiliereView: FunctionComponent<Props> = props => {
             {'\n'}
           </Text>
           <Text>
-            {bacc}
+            {renderBacc(bacc)}
             {'\n'}
             {'\n'}
           </Text>
@@ -73,6 +83,24 @@ const FiliereView: FunctionComponent<Props> = props => {
           </Text>
           <Text numberOfLines={5}>
             {description}
+            {'\n'}
+            {'\n'}
+          </Text>
+          <Text style={styles.titleText}>
+            {'Faculte'}
+            {'\n'}
+          </Text>
+          <Text>
+            {faculty}
+            {'\n'}
+            {'\n'}
+          </Text>
+          <Text style={styles.titleText}>
+            {'Location'}
+            {'\n'}
+          </Text>
+          <Text>
+            {location}
             {'\n'}
             {'\n'}
           </Text>
@@ -95,6 +123,17 @@ const FiliereView: FunctionComponent<Props> = props => {
             {'\n'}
           </Text>
           <Text style={styles.titleText}>
+            {"Ouverture d'inscription"}
+            {'\n'}
+          </Text>
+          <Text>
+            {inscription_open}
+            {' - '}
+            {inscription_close}
+            {'\n'}
+            {'\n'}
+          </Text>
+          <Text style={styles.titleText}>
             {"Frais d'inscription"}
             {'\n'}
           </Text>
@@ -109,28 +148,8 @@ const FiliereView: FunctionComponent<Props> = props => {
           </Text>
           <Text>
             {bank_account}
-            {' adresser a '}
+            {'Adresser a '}
             {bank_account_owner}
-            {'\n'}
-            {'\n'}
-          </Text>
-          <Text style={styles.titleText}>
-            {'Location'}
-            {'\n'}
-          </Text>
-          <Text>
-            {location}
-            {'\n'}
-            {'\n'}
-          </Text>
-          <Text style={styles.titleText}>
-            {"Ouverture d'inscription"}
-            {'\n'}
-          </Text>
-          <Text>
-            {inscription_open}
-            {' - '}
-            {inscription_close}
             {'\n'}
             {'\n'}
           </Text>
