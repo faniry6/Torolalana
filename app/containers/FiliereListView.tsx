@@ -43,8 +43,8 @@ const FiliereListView: FC<Props> = props => {
         return (
           <ListItem
             key={item.id!}
-            title={item.name}
-            onPress={() => onSelectFiliere(item.id!, item.name)}
+            title={item.filiere}
+            onPress={() => onSelectFiliere(item.id!, item.filiere)}
           />
         );
       }}

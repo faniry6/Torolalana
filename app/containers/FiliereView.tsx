@@ -42,7 +42,7 @@ const FiliereView: FunctionComponent<Props> = props => {
 
   useEffect(() => {
     let filiere = Filiere.getById(filiereId)!;
-    setTitle(filiere.name);
+    setTitle(filiere.filiere);
     setDescription(filiere.description);
     setBacc(filiere.bacc);
     setLocation(filiere.location);
@@ -53,7 +53,7 @@ const FiliereView: FunctionComponent<Props> = props => {
     setBank(filiere.bank_account);
     setBankOwner(filiere.bank_account_owner);
     setAdmission(filiere.admission);
-    setFaculty(filiere.faculty);
+    setFaculty(filiere.domaine);
   }, []);
 
   function renderBacc(bacc: string[]) {

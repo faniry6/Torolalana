@@ -1,22 +1,24 @@
-export interface ArtistDoc {
-  name: string
-  path: string
-  type: 'artist'
+export interface FiliereDoc {
+  id: string;
+  filiere: string;
+  description: string;
+  bacc: string[];
+  location: string;
+  updated_at: Date;
+  inscription_open: string;
+  inscription_closed: string;
+  fees: string;
+  bank_account: string;
+  bank_account_owner: string;
+  admission: string;
+  document: string;
+  domaine: string;
 }
-export interface SongDoc {
-  title: string
-  artist: string
-  path: string
-  type: 'song'
-}
-export type Doc = ArtistDoc | SongDoc
 
 export abstract class BaseService {
-  name!: string
-  baseUrl!: string
-  searchUrl!: string
-  constructor() { }
-  abstract async getSearch(query: string): Promise<Doc[]>
-  abstract async getArtistSongs(path: string): Promise<SongDoc[]>
-  abstract async getChordProSong(path: string): Promise<string>
+  name!: string;
+  baseUrl!: string;
+  searchUrl!: string;
+  constructor() {}
+  abstract async getAll(): Promise<FiliereDoc[]>;
 }

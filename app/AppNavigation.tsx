@@ -22,6 +22,7 @@ import PlaylistEdit from './containers/PlaylistEdit';
 import Settings from './containers/Settings';
 import FontSizeSelect from './containers/Settings/FontSizeSelect';
 import LanguageContext from './languages/LanguageContext';
+import UpdateInfoView from './containers/UpdateInfoView';
 
 export type SettingsStackParamList = {
   Settings: undefined;
@@ -54,6 +55,7 @@ export type MainTabParamList = {
   BaccList: undefined;
   FiliereList: undefined;
   LocationList: undefined;
+  UpdateInfoView: undefined;
 };
 const Tab = createBottomTabNavigator<MainTabParamList>();
 const MainTab = () => {
@@ -100,6 +102,14 @@ const MainTab = () => {
         }}
         component={LocationList}
       />
+      <Tab.Screen
+        name="UpdateInfoView"
+        options={{
+          title: 'Options',
+          tabBarIcon: props => <TabBarIcon {...props} name="cog" />,
+        }}
+        component={UpdateInfoView}
+      />
       {/* <Tab.Screen
         name="SongList"
         options={{
@@ -110,14 +120,14 @@ const MainTab = () => {
         }}
         component={SongList}
       /> */}
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Settings"
         options={{
           title: t('settings'),
           tabBarIcon: props => <TabBarIcon {...props} name="cog" />,
         }}
         component={SettingsTab}
-      />
+      /> */}
     </Tab.Navigator>
   );
 };
