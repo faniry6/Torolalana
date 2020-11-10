@@ -87,7 +87,7 @@ const FiliereView: FunctionComponent<Props> = props => {
             {'\n'}
           </Text>
           <Text style={styles.titleText}>
-            {'Faculte'}
+            {'Domaine'}
             {'\n'}
           </Text>
           <Text>
@@ -148,7 +148,7 @@ const FiliereView: FunctionComponent<Props> = props => {
           </Text>
           <Text>
             {bank_account}
-            {'Adresser a '}
+            {' adressée à '}
             {bank_account_owner}
             {'\n'}
             {'\n'}

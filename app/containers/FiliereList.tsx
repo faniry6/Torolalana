@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useCallback} from 'react';
 import {View, StyleSheet, FlatList, StatusBar, Dimensions} from 'react-native';
 import {Filiere} from '../db';
 import ListItem from '../components/ListItem';
@@ -27,15 +27,12 @@ type Props = {
 
 const FiliereList = (props: Props) => {
   const [filiere, setFiliere] = useState(Filiere.getAll());
-  const [isLoading, setIsLoading] = useState(true);
 
-  // useEffect(() => {
-  //   if (Filiere.shouldUpdateDb()) {
-  //     Filiere.populateDb();
-  //     setFiliere(Filiere.getAll());
-  //   }
-  //   setIsLoading(false);
-  // }, [isLoading]);
+  useFocusEffect(
+    useCallback(() => {
+      setFiliere(Filiere.getAll())
+    }, [])
+  )
 
   function onSelectFiliere(id: string, name: string) {
     props.navigation.navigate('FiliereView', {id, name});
@@ -53,8 +50,8 @@ const FiliereList = (props: Props) => {
           return (
             <ListItem
               key={item.id!}
-              title={item.name}
-              onPress={() => onSelectFiliere(item.id!, item.name)}
+              title={item.filiere}
+              onPress={() => onSelectFiliere(item.id!, item.filiere)}
             />
           );
         }}

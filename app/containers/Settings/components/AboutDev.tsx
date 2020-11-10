@@ -8,7 +8,7 @@ const AboutDev = () => {
 
   async function goToDevURL() {
     try {
-      await Linking.openURL('https://github.com/artutra')
+      await Linking.openURL('https://github.com')
     } catch (e) {
       console.warn(e)
     }
@@ -16,9 +16,9 @@ const AboutDev = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.lightGray}>{t('developed_by')} </Text>
+      <Text style={styles.lightGray}>{'Developer par'} </Text>
       <TouchableOpacity onPress={goToDevURL} style={styles.devButton}>
-        <Text style={styles.primaryColor}>Artur Miranda</Text>
+        <Text style={styles.primaryColor}>Ra Faniry</Text>
       </TouchableOpacity>
     </View>
   )
