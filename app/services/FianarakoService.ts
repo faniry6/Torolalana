@@ -11,6 +11,6 @@ export default class FianarakoService extends BaseService {
 
   async getAll(): Promise<FiliereDoc[]> {
     const result = await axios.get(this.baseUrl + '/api/v1/filiere/');
-    return result.data;
+    return result.data.data;
   }
 }

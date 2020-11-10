@@ -25,4 +25,11 @@ export class Info {
       return Info!;
     }
   }
+
+  static update(date: Date) {
+    let current = this.get();
+    realm.write(() => {
+      current.database_update = date;
+    });
+  }
 }
