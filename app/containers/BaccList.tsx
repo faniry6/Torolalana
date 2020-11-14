@@ -1,5 +1,12 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, FlatList, StatusBar, Dimensions} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  StatusBar,
+  Dimensions,
+} from 'react-native';
 import ListItem from '../components/ListItem';
 import {RootStackParamList, MainTabParamList} from '../AppNavigation';
 import LanguageContext from '../languages/LanguageContext';
@@ -9,6 +16,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import CustomHeader from '../components/CustomHeader';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Bacc} from '../db';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 type BaccListScreenNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<MainTabParamList, 'BaccList'>,
@@ -18,16 +26,6 @@ type BaccListScreenNavigationProp = CompositeNavigationProp<
 type Props = {
   navigation: BaccListScreenNavigationProp;
 };
-// const bacc = [
-//   {id: '1', serie: 'A1'},
-//   {id: '2', serie: 'A2'},
-//   {id: '3', serie: 'C'},
-//   {id: '4', serie: 'D'},
-//   {id: '5', serie: 'TI'},
-//   {id: '6', serie: 'TGC'},
-//   {id: '7', serie: 'TA'},
-//   {id: '8', serie: 'TT'},
-// ];
 
 const BaccList = (props: Props) => {
   const [bacc] = useState(Bacc.getAll());
@@ -35,18 +33,26 @@ const BaccList = (props: Props) => {
     props.navigation.navigate('FiliereListView', {id, filter});
   }
 
-  // useEffect(() => {
-  //   if (Filiere.shouldUpdateDb()) {
-  //     Filiere.populateDb();
-  //   }
-  // }, []);
-
   return (
     <SafeAreaView style={{flex: 1}}>
       <StatusBar barStyle="dark-content" backgroundColor="white" />
       <CustomHeader title={'Choisissez votre serie Bacc'} />
-
       <FlatList
+        data={bacc}
+        numColumns={3}
+        renderItem={({item, index}) => {
+          return (
+            <TouchableOpacity
+              style={styles.item}
+              onPress={() => onSelectBacc(item.id!, item.serie)}>
+              <View>
+                <Text style={styles.itemText}>{item.serie}</Text>
+              </View>
+            </TouchableOpacity>
+          );
+        }}
+      />
+      {/* <FlatList
         data={bacc}
         contentContainerStyle={bacc.length <= 0 ? {flex: 1} : {}}
         renderItem={({item, index}) => {
@@ -58,9 +64,31 @@ const BaccList = (props: Props) => {
             />
           );
         }}
-      />
+      />  */}
     </SafeAreaView>
   );
 };
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginVertical: 20,
+  },
+  item: {
+    backgroundColor: 'grey',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+    margin: 1,
+    height: Dimensions.get('window').width / 3, // approximate a square
+    width: Dimensions.get('window').width / 3,
+  },
+  itemInvisible: {
+    backgroundColor: 'transparent',
+  },
+  itemText: {
+    color: '#fff',
+    fontSize: Dimensions.get('window').width / 20,
+  },
+});
 
 export default BaccList;

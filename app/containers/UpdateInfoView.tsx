@@ -1,20 +1,9 @@
 import React, {useState, FC, useEffect} from 'react';
-import {
-  CompositeNavigationProp,
-  useFocusEffect,
-} from '@react-navigation/native';
+import {CompositeNavigationProp} from '@react-navigation/native';
 import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {
-  StyleSheet,
-  Button,
-  View,
-  SafeAreaView,
-  Text,
-  Alert,
-} from 'react-native';
+import {StyleSheet, Button, View, Text, Alert} from 'react-native';
 import {MainTabParamList, RootStackParamList} from '../AppNavigation';
-import axios from 'axios';
 import {FiliereDoc} from '../services/BaseService';
 import {services, getService} from '../services';
 import {Filiere} from '../db/Filiere';
@@ -23,6 +12,11 @@ import realm from '../db';
 import LoadingIndicator from '../components/LoadingIndicator';
 import {ScrollView} from 'react-native-gesture-handler';
 import AboutDev from './Settings/components/AboutDev';
+import {Image} from 'react-native';
+import {Dimensions} from 'react-native';
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 type UpdateInfoScreenNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<MainTabParamList, 'UpdateInfoView'>,
@@ -46,7 +40,7 @@ const UpdateInfo: FC<Props> = props => {
     let year = date.getFullYear();
     let hour = date.getHours();
     let mn = date.getMinutes();
-    let format = day + '/' + month + '/' + year+', '+hour+':'+mn;
+    let format = day + '/' + month + '/' + year + ', ' + hour + ':' + mn;
     return 'Dernière mise à jour : ' + format;
   }
   useEffect(() => {
@@ -131,42 +125,52 @@ const UpdateInfo: FC<Props> = props => {
   return (
     <View style={styles.content}>
       <ScrollView>
-      <View>
-        <Text style={styles.head}>Info</Text>
-      </View>
-      <Separator title="A Propos" />
-      <View>
-        <Text style={styles.text}>
-          Lorem Ipsum has been the industry's standard dummy text ever since the
-          1500s, when an unknown printer took a galley of type and scrambled it
-          to make a type specimen book. It has survived not only five centuries,
-          but also the leap into electronic typesetting, remaining essentially
-          unchanged. It was popularised in the 1960s with the release of
-          Letraset sheets containing Lorem Ipsum passages, and more recently
-          with desktop publishing software like Aldus PageMaker including
-          versions of Lorem Ipsum
-        </Text>
-      </View>
-      <Separator title="Licence" />
-      <View>
-        <Text style={styles.text}>
-          The title and onPress handler are required. It is recommended to set
-          accessibilityLabel to help make your app usable by everyone.
-        </Text>
-      </View>
+        <View>
+          <Text style={styles.head}>Info</Text>
+        </View>
+        <Separator title="A Propos" />
+        <View
+          style={{
+            width: (1.9 * windowWidth) / 3,
+            height: 130,
+            flex: 1,
+            flexDirection: 'row',
+          }}>
+          <Image
+            source={require('../assets/logo/uni-tana.png')}
+            style={styles.image}
+          />
+          <Text style={styles.text}>
+            Ce projet est en partenariat avec l'université d'Antananarivo. Tous
+            les données actuelles ont été directement collectées au pres des
+            départements respectives. Si vous avez des doutes quant à
+            l'authenticité des données fournies ici, veuillez utiliser le
+            contact suivant
+          </Text>
+        </View>
+        <View>
+          <Text style={{textAlign: 'center'}}>Contact: muster@muster.com</Text>
+        </View>
+        <Separator title="Licence" />
+        <View>
+          <Text style={styles.text}>
+            Fianarako App est un projet opensource suivant la licence GPLv3. Si
+            vous voulez contribuer, vous pouvez trouver la sourcecode ci-dessous
+          </Text>
+        </View>
 
-      <Separator title="Base de données" />
-      <View>
-        <Text style={styles.text}>{message}</Text>
-        <Button
-          title="Mettre a jour"
-          onPress={() => {
-            findAndUpdateDatabase();
-          }}
-        />
-        <LoadingIndicator error={error} loading={isLoading} />
-      </View>
-      <AboutDev/>
+        <Separator title="Base de données" />
+        <View>
+          <Text style={styles.text}>{message}</Text>
+          <Button
+            title="Mettre a jour"
+            onPress={() => {
+              findAndUpdateDatabase();
+            }}
+          />
+          <LoadingIndicator error={error} loading={isLoading} />
+        </View>
+        <AboutDev />
       </ScrollView>
     </View>
   );
@@ -179,13 +183,18 @@ const styles = StyleSheet.create({
   },
   head: {
     textAlign: 'center',
-    fontSize: 30,
+    fontSize: Dimensions.get('window').width / 20,
     marginVertical: 8,
     fontWeight: 'bold',
   },
   text: {
-    textAlign: 'center',
+    textAlign: 'left',
     marginVertical: 8,
+  },
+  image: {
+    width: windowWidth / 4,
+    height: 100,
+    resizeMode: 'contain',
   },
   title: {
     fontWeight: 'bold',

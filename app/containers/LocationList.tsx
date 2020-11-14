@@ -1,20 +1,14 @@
-import React, {useState, useContext, useCallback} from 'react';
-import {View, StyleSheet, FlatList, StatusBar, Dimensions} from 'react-native';
-import {Artist} from '../db';
+import React from 'react';
+import {FlatList, StatusBar} from 'react-native';
 import ListItem from '../components/ListItem';
-import TextInputModal from '../components/TextInputModal';
-import EmptyListMessage from '../components/EmptyListMessage';
 import {RootStackParamList, MainTabParamList} from '../AppNavigation';
-import LanguageContext from '../languages/LanguageContext';
 import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
 import {
   CompositeNavigationProp,
-  useFocusEffect,
 } from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import CustomHeader from '../components/CustomHeader';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {alertDelete} from '../utils/alertDelete';
 
 type LocationListScreenNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<MainTabParamList, 'LocationList'>,
@@ -27,9 +21,7 @@ type Props = {
 const data = [
   {id: '1', location: 'Antananarivo'},
   {id: '2', location: 'Antsirabe'},
-  {id: '3', location: 'Fianarantsoa'},
-  {id: '4', location: 'Toamasina'},
-  {id: '5', location: 'Antsiranana'},
+  {id: '3', location: 'Soavinandriana'},
 ];
 
 const LocationList = (props: Props) => {
@@ -40,7 +32,7 @@ const LocationList = (props: Props) => {
   return (
     <SafeAreaView style={{flex: 1}}>
       <StatusBar barStyle="dark-content" backgroundColor="white" />
-      <CustomHeader title={'Ou voulez vous etudier?'} />
+      <CustomHeader title={'Où voulez-vous étudier ?'} />
 
       <FlatList
         data={data}
