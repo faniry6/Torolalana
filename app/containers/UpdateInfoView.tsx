@@ -150,13 +150,6 @@ const UpdateInfo: FC<Props> = props => {
         <View>
           <Text style={{textAlign: 'center'}}>Contact: muster@muster.com</Text>
         </View>
-        <Separator title="Licence" />
-        <View>
-          <Text style={styles.text}>
-            Fianarako App est un projet opensource suivant la licence GPLv3. Si
-            vous voulez contribuer, vous pouvez trouver la sourcecode ci-dessous
-          </Text>
-        </View>
 
         <Separator title="Base de données" />
         <View>
