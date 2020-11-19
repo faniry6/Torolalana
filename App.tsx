@@ -1,5 +1,5 @@
 import 'react-native-gesture-handler';
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import AppNavigation from './app/AppNavigation';
 import {NavigationContainer} from '@react-navigation/native';
 import LanguageContext, {
@@ -8,6 +8,7 @@ import LanguageContext, {
 import {GlobalSettings} from './app/db/GlobalSettings';
 import {Filiere} from './app/db/Filiere';
 import {Bacc} from './app/db';
+import AnimatedSplash from 'react-native-animated-splash-screen';
 
 const LoadLanguage = () => {
   const {changeLanguage} = useContext(LanguageContext);
@@ -29,9 +30,24 @@ const LoadDatabase = () => {
   }, []);
   return null;
 };
-export default class App extends React.Component {
-  render() {
-    return (
+
+const App = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoaded(true);
+    }, 1000);
+  }, []);
+
+  return (
+    <AnimatedSplash
+      translucent={true}
+      isLoaded={isLoaded}
+      backgroundColor={'white'}
+      logoImage={require('./app/assets/logo/uni-tana.png')}
+      logoHeight={150}
+      logoWidth={150}>
       <LanguageProvider>
         <LoadLanguage />
         <LoadDatabase />
@@ -39,6 +55,30 @@ export default class App extends React.Component {
           <AppNavigation />
         </NavigationContainer>
       </LanguageProvider>
-    );
-  }
-}
+    </AnimatedSplash>
+  );
+};
+export default App;
+
+// export default class App extends React.Component {
+//   const [isLoaded, setIsLoaded] = useState(false);
+//   render() {
+//     return (
+//       <AnimatedSplash
+//         translucent={true}
+//         isLoaded={this.state.isLoaded}
+//         logoImage={require('./app/assets/logo/fianarako-1000x1147.png')}
+//         backgroundColor={'white'}
+//         logoHeight={150}
+//         logoWidth={150}>
+//         <LanguageProvider>
+//           <LoadLanguage />
+//           <LoadDatabase />
+//           <NavigationContainer>
+//             <AppNavigation />
+//           </NavigationContainer>
+//         </LanguageProvider>
+//       </AnimatedSplash>
+//     );
+//   }
+// }

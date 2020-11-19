@@ -18,6 +18,8 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {Bacc} from '../db';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
+var randomColor = require('randomcolor');
+
 type BaccListScreenNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<MainTabParamList, 'BaccList'>,
   StackNavigationProp<RootStackParamList, 'MainTab'>
@@ -43,7 +45,7 @@ const BaccList = (props: Props) => {
         renderItem={({item, index}) => {
           return (
             <TouchableOpacity
-              style={styles.item}
+              style={[styles.item, {backgroundColor: randomColor()}]}
               onPress={() => onSelectBacc(item.id!, item.serie)}>
               <View>
                 <Text style={styles.itemText}>{item.serie}</Text>
@@ -52,19 +54,6 @@ const BaccList = (props: Props) => {
           );
         }}
       />
-      {/* <FlatList
-        data={bacc}
-        contentContainerStyle={bacc.length <= 0 ? {flex: 1} : {}}
-        renderItem={({item, index}) => {
-          return (
-            <ListItem
-              key={item.id!}
-              title={item.serie}
-              onPress={() => onSelectBacc(item.id!, item.serie)}
-            />
-          );
-        }}
-      />  */}
     </SafeAreaView>
   );
 };
@@ -86,7 +75,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   itemText: {
-    color: '#fff',
+    color: 'black',
     fontSize: Dimensions.get('window').width / 20,
   },
 });

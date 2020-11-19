@@ -141,9 +141,8 @@ const UpdateInfo: FC<Props> = props => {
             style={styles.image}
           />
           <Text style={styles.text}>
-            Ce projet est en partenariat avec l'université d'Antananarivo. Tous
-            les données actuelles ont été directement collectées au pres des
-            départements respectives. Si vous avez des doutes quant à
+            Tous les données actuelles ont été directement collectées au pres
+            des départements respectives. Si vous avez des doutes quant à
             l'authenticité des données fournies ici, veuillez utiliser le
             contact suivant
           </Text>
