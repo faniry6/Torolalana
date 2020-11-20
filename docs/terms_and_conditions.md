@@ -35,9 +35,6 @@
                     des informations permettant d'identifier une personne. Le site
                     les informations que je demande seront
                     conservé sur votre appareil et n'est pas collecté par moi de quelque manière que ce soit.
-                  </p> <p>
-                    The app does use third party services that may collect
-                    information used to identify you.
                   </p> <div><p>
                       L'application utilise des services de tiers qui peuvent collecter
                     les informations utilisées pour vous identifier.
