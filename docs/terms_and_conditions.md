@@ -70,7 +70,8 @@
                     qui leur est assigné en notre nom. Toutefois, ils sont obligés
                     de ne pas divulguer ou utiliser les informations pour toute autre
                     objectif.
-                  </p> <p>><forte>Sécurité</forte></p> <p>
+                  
+        </p> <p><strong>Sécurité</strong></p> <p>
                     J'apprécie la confiance que vous nous accordez
                     vos informations personnelles, nous nous efforçons donc d'utiliser
                     des moyens commercialement acceptables de la protéger. Mais n'oubliez pas
