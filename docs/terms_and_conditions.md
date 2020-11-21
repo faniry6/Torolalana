@@ -6,10 +6,10 @@
       <style> body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; padding:1em; } </style>
     </head>
     <body>
-    <h2>Privacy Policy</h2> <p>
-                    Faniry Razafindrazaka a créé l'application Torolalana en tant que
+    <h2>Politique de confidentialité</h2> <p>
+                    Faniry Razafindrazaka a créé l'application Torolalana en tant qu'
                     une application Open Source. Ce SERVICE est fourni par
-                    Faniry Razafindrazaka est gratuit et est destiné à
+                    Faniry Razafindrazaka gratuitement et est destiné à
                     utilisation en tant que telle sans garantie.
                     Le serveur est maintenu par l'université d'Antananarivo. Je ne suis pas responsable de l'authenticité et de la validité des données figurant dans l'application
                   </p> <p>
@@ -40,8 +40,7 @@
                     les informations utilisées pour vous identifier.
                     </p> <ul><li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services</a></li><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></ul></div> <p><strong>Log Data</strong></p> <p>
                     Je tiens à vous informer que chaque fois que
-                    vous utilisez mon service, en cas d'erreur dans le
-                    app Je collecte des données et des informations (par l'intermédiaire de tiers
+                    vous utilisez mon service, en cas d'erreur dans l'application,  je collecte des données et des informations (par l'intermédiaire de tiers
                     produits de fête) sur votre téléphone appelé Log Data. Ces données de journal
                     peut inclure des informations telles que votre appareil Internet
                     Adresse du protocole ("IP"), nom de l'appareil, système d'exploitation
