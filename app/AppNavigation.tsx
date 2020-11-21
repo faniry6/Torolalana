@@ -178,7 +178,7 @@ const AppNavigation = () => {
       <RootStack.Screen
         name="FiliereView"
         component={FiliereView}
-        options={({route}) => ({title: route.params.name})}
+        options={({route}) => ({title: 'Information'})}
       />
       <RootStack.Screen
         name="FiliereListView"

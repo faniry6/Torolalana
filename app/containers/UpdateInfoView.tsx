@@ -11,12 +11,10 @@ import {Info} from '../db/Info';
 import realm from '../db';
 import LoadingIndicator from '../components/LoadingIndicator';
 import {ScrollView} from 'react-native-gesture-handler';
-import AboutDev from './Settings/components/AboutDev';
 import {Image} from 'react-native';
-import {Dimensions} from 'react-native';
+import {Dimensions, TouchableOpacity, Linking} from 'react-native';
 
 const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
 
 type UpdateInfoScreenNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<MainTabParamList, 'UpdateInfoView'>,
@@ -26,6 +24,41 @@ type Props = {
   navigation: UpdateInfoScreenNavigationProp;
 };
 
+const TermsOfUse = () => {
+  async function goToTermsURL() {
+    try {
+      await Linking.openURL(
+        'https://faniry6.github.io/Torolalana/terms_and_conditions',
+      );
+    } catch (e) {
+      console.warn(e);
+    }
+  }
+  return (
+    <View>
+      <TouchableOpacity onPress={goToTermsURL}>
+        <Text style={styles.primaryColor}>Conditions d'utilisation</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+const Dev = () => {
+  async function goToDevURL() {
+    try {
+      await Linking.openURL('https://github.com/faniry6/Torolalana');
+    } catch (e) {
+      console.warn(e);
+    }
+  }
+  return (
+    <View>
+      <TouchableOpacity onPress={goToDevURL}>
+        <Text style={styles.primaryColor}>Ra Faniry</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
 const UpdateInfo: FC<Props> = props => {
   const [docs, setDocs] = useState<FiliereDoc[] | null>(null);
   const [serviceName] = useState(services[0].name);
@@ -162,7 +195,16 @@ const UpdateInfo: FC<Props> = props => {
           />
           <LoadingIndicator error={error} loading={isLoading} />
         </View>
-        <AboutDev />
+        <Separator title="Termes et conditions" />
+        <View>
+          <Text style={styles.text}>Cette application est développé par</Text>
+          {Dev()}
+          <Text style={styles.text}>
+            En utilisant cette application, vous acceptez les conditions
+            suivantes
+          </Text>
+          {TermsOfUse()}
+        </View>
       </ScrollView>
     </View>
   );
@@ -209,6 +251,20 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     paddingHorizontal: 20,
     textAlign: 'center',
+  },
+  container_term: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  devButton: {
+    paddingVertical: 10,
+  },
+  lightGray: {
+    color: '#888',
+  },
+  primaryColor: {
+    color: 'tomato',
   },
 });
 

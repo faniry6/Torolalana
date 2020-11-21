@@ -1,18 +1,10 @@
-import React, {
-  useState,
-  useEffect,
-  FunctionComponent,
-  useRef,
-  useContext,
-  useLayoutEffect,
-  FC,
-} from 'react';
-import {Text, View, StyleSheet, Switch, TouchableHighlight} from 'react-native';
+import React, {useState, useEffect, FunctionComponent} from 'react';
+import {Text, View, StyleSheet} from 'react-native';
 import {Filiere} from '../db';
 import {RootStackParamList} from '../AppNavigation';
 import {RouteProp} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {ScrollView} from 'react-native-gesture-handler';
+import {FlatList, ScrollView} from 'react-native-gesture-handler';
 
 type FiliereViewScreenRouteProp = RouteProp<RootStackParamList, 'FiliereView'>;
 type FiliereViewScreenNavigationProp = StackNavigationProp<
@@ -25,15 +17,13 @@ type Props = {
 };
 
 const FiliereView: FunctionComponent<Props> = props => {
-  const {navigation} = props;
   const filiereId = props.route.params.id;
   const [description, setDescription] = useState<string>('');
-  const [name, setTitle] = useState<string>('');
   const [bacc, setBacc] = useState<string[]>([]);
   const [fees, setFees] = useState<string>('');
+  const [name, setName] = useState<string>('');
   const [bank_account, setBank] = useState<string>('');
   const [bank_account_owner, setBankOwner] = useState<string>('');
-  const [admission, setAdmission] = useState<string>('');
   const [location, setLocation] = useState<string>('');
   const [inscription_open, setInscriptionOpen] = useState<string>('');
   const [inscription_close, setInscriptionClose] = useState<string>('');
@@ -42,7 +32,7 @@ const FiliereView: FunctionComponent<Props> = props => {
 
   useEffect(() => {
     let filiere = Filiere.getById(filiereId)!;
-    setTitle(filiere.filiere);
+    setName(filiere.filiere);
     setDescription(filiere.description);
     setBacc(filiere.bacc);
     setLocation(filiere.location);
@@ -52,7 +42,6 @@ const FiliereView: FunctionComponent<Props> = props => {
     setFees(filiere.fees);
     setBank(filiere.bank_account);
     setBankOwner(filiere.bank_account_owner);
-    setAdmission(filiere.admission);
     setFaculty(filiere.domaine);
   }, []);
 
@@ -62,98 +51,53 @@ const FiliereView: FunctionComponent<Props> = props => {
       s += bacc[e] + ', ';
     }
     return s.slice(0, -2);
-    //return bacc[0];
+  }
+
+  function renderDocument(document: string) {
+    return document.split('\n');
+  }
+  function renderRow(data: string) {
+    return (
+      <View style={{flexDirection: 'row'}}>
+        <Text>{'\u2022'}</Text>
+        <Text style={{flex: 1, paddingLeft: 5}}>{data}</Text>
+      </View>
+    );
+  }
+  function addEntry(title: string, content: string) {
+    return (
+      <View>
+        <Text style={styles.titleText}>{title}</Text>
+        <Text>{content}</Text>
+      </View>
+    );
   }
   return (
     <View style={styles.content}>
-      <ScrollView>
-        <Text style={styles.baseText}>
-          <Text style={styles.titleText}>
-            {'Bacc'}
-            {'\n'}
-          </Text>
-          <Text>
-            {renderBacc(bacc)}
-            {'\n'}
-            {'\n'}
-          </Text>
-          <Text style={styles.titleText}>
-            {'Description'}
-            {'\n'}
-          </Text>
-          <Text numberOfLines={5}>
-            {description}
-            {'\n'}
-            {'\n'}
-          </Text>
-          <Text style={styles.titleText}>
-            {'Domaine'}
-            {'\n'}
-          </Text>
-          <Text>
-            {faculty}
-            {'\n'}
-            {'\n'}
-          </Text>
-          <Text style={styles.titleText}>
-            {'Location'}
-            {'\n'}
-          </Text>
-          <Text>
-            {location}
-            {'\n'}
-            {'\n'}
-          </Text>
-          <Text style={styles.titleText}>
-            {'Dossiers'}
-            {'\n'}
-          </Text>
-          <Text>
-            {document}
-            {'\n'}
-            {'\n'}
-          </Text>
-          <Text style={styles.titleText}>
-            {'Admission'}
-            {'\n'}
-          </Text>
-          <Text>
-            {admission}
-            {'\n'}
-            {'\n'}
-          </Text>
-          <Text style={styles.titleText}>
-            {"Ouverture d'inscription"}
-            {'\n'}
-          </Text>
-          <Text>
-            {inscription_open}
-            {' - '}
-            {inscription_close}
-            {'\n'}
-            {'\n'}
-          </Text>
-          <Text style={styles.titleText}>
-            {"Frais d'inscription"}
-            {'\n'}
-          </Text>
-          <Text>
-            {fees}
-            {'\n'}
-            {'\n'}
-          </Text>
-          <Text style={styles.titleText}>
-            {'Compte de transfert'}
-            {'\n'}
-          </Text>
-          <Text>
-            {bank_account}
-            {' adressée à '}
-            {bank_account_owner}
-            {'\n'}
-            {'\n'}
-          </Text>
-        </Text>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        {addEntry('Filiere', name)}
+        {addEntry('Bacc', renderBacc(bacc))}
+        {addEntry('Description', description)}
+        {addEntry('Domaine', faculty)}
+        {addEntry('Location', location)}
+        {addEntry(
+          "Ouverture d'inscription",
+          inscription_open + ' - ' + inscription_close,
+        )}
+        <Text style={styles.titleText}>{'Dossiers'}</Text>
+        <View style={styles.container}>
+          <FlatList
+            data={renderDocument(document)}
+            renderItem={({item}) => renderRow(item)}
+            scrollEnabled={false}
+          />
+        </View>
+        {addEntry("Frais d'inscription", fees)}
+        {addEntry(
+          'Compte de transfert',
+          'Nom : ' + bank_account_owner + '\n' + 'Banque : ' + bank_account,
+        )}
+        {addEntry('', '')}
       </ScrollView>
     </View>
   );
@@ -167,14 +111,23 @@ const styles = StyleSheet.create({
   titleText: {
     fontSize: 15,
     fontWeight: 'bold',
+    marginTop: '5%',
   },
   content: {
     color: 'black',
     fontSize: 25,
     backgroundColor: 'white',
-    paddingVertical: 20,
     paddingHorizontal: 20,
     textAlign: 'center',
+  },
+  container: {
+    flex: 1,
+    paddingTop: 0,
+  },
+  item: {
+    padding: 10,
+    fontSize: 18,
+    height: 44,
   },
 });
 
