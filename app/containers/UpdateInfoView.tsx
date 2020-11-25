@@ -175,13 +175,12 @@ const UpdateInfo: FC<Props> = props => {
           />
           <Text style={styles.text}>
             Tous les données actuelles ont été directement collectées au pres
-            des départements respectives. Si vous avez des doutes quant à
-            l'authenticité des données fournies ici, veuillez utiliser le
-            contact suivant
+            des départements respectives. En cas de doutes veuillez contacter
+            directement le departement concerne ou utiliser le contact suivant
           </Text>
         </View>
         <View>
-          <Text style={{textAlign: 'center'}}>Contact: muster@muster.com</Text>
+          <Text style={{textAlign: 'center'}}>Contact: talin@aims.ac.za</Text>
         </View>
 
         <Separator title="Base de données" />

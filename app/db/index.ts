@@ -6,6 +6,7 @@ import {GlobalSettings} from './GlobalSettings';
 import {Filiere} from './Filiere';
 import {Bacc} from './Bacc';
 import {Info} from './Info';
+import {MyFiliere} from './MyFiliere';
 
 var realm = new Realm({
   schema: [
@@ -16,6 +17,7 @@ var realm = new Realm({
     Filiere.schema,
     Bacc.schema,
     Info.schema,
+    MyFiliere.schema,
   ],
   schemaVersion: 8,
   migration: () => {},
@@ -27,3 +29,4 @@ export {Artist};
 export {Filiere};
 export {Bacc};
 export {Info};
+export {MyFiliere};

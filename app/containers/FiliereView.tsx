@@ -1,10 +1,18 @@
-import React, {useState, useEffect, FunctionComponent} from 'react';
+import React, {
+  useState,
+  useEffect,
+  useLayoutEffect,
+  FunctionComponent,
+} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 import {Filiere} from '../db';
+import {MyFiliere} from '../db';
 import {RootStackParamList} from '../AppNavigation';
 import {RouteProp} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {FlatList, ScrollView} from 'react-native-gesture-handler';
+import TouchableIcon from '../components/TouchableIcon';
+import {Icon} from 'react-native-vector-icons/Icon';
 
 type FiliereViewScreenRouteProp = RouteProp<RootStackParamList, 'FiliereView'>;
 type FiliereViewScreenNavigationProp = StackNavigationProp<
@@ -17,7 +25,9 @@ type Props = {
 };
 
 const FiliereView: FunctionComponent<Props> = props => {
+  const {navigation} = props;
   const filiereId = props.route.params.id;
+  const [state, setState] = useState({icon: 'bookmark-outline', liked: false});
   const [description, setDescription] = useState<string>('');
   const [bacc, setBacc] = useState<string[]>([]);
   const [fees, setFees] = useState<string>('');
@@ -29,6 +39,9 @@ const FiliereView: FunctionComponent<Props> = props => {
   const [inscription_close, setInscriptionClose] = useState<string>('');
   const [document, setDocument] = useState<string>('');
   const [faculty, setFaculty] = useState<string>('');
+  const [admission, setAdmission] = useState<string>('');
+
+  let myfiliere = MyFiliere.getByName('MonFiliere')!;
 
   useEffect(() => {
     let filiere = Filiere.getById(filiereId)!;
@@ -43,6 +56,7 @@ const FiliereView: FunctionComponent<Props> = props => {
     setBank(filiere.bank_account);
     setBankOwner(filiere.bank_account_owner);
     setFaculty(filiere.domaine);
+    setAdmission(filiere.admission);
   }, []);
 
   function renderBacc(bacc: string[]) {
@@ -72,6 +86,45 @@ const FiliereView: FunctionComponent<Props> = props => {
       </View>
     );
   }
+
+  function onHeartPress() {
+    // if(MyFiliere.hasFiliere(myfiliere, Filiere.getById(filiereId)!)) {
+    //   if (state.liked) {
+    //       MyFiliere.removeFiliere(myfiliere, Filiere.getById(filiereId)!)
+    //   }
+
+    // }
+    if (state.liked) {
+      MyFiliere.removeFiliere(myfiliere, Filiere.getById(filiereId)!);
+    } else {
+      MyFiliere.addFiliere(myfiliere, Filiere.getById(filiereId)!);
+    }
+
+    state.liked === false
+      ? setState({icon: 'bookmark', liked: true})
+      : setState({icon: 'bookmark-outline', liked: false});
+    // if (state.liked) {;
+    // } else {
+    //   MyFiliere.addFiliere(myfiliere, Filiere.getById(filiereId)!);
+    // }
+  }
+
+  useEffect(() => {
+    if (MyFiliere.hasFiliere(myfiliere, Filiere.getById(filiereId)!)) {
+      setState({icon: 'bookmark', liked: true});
+    }
+  }, []);
+
+  // useLayoutEffect(() => {
+  //   navigation.setOptions({
+  //     headerRight: () => (
+  //       <View style={{flexDirection: 'row'}}>
+  //         <TouchableIcon onPress={() => onHeartPress()} name={state.icon} />
+  //       </View>
+  //     ),
+  //   });
+  // }, [navigation]);
+
   return (
     <View style={styles.content}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -84,6 +137,7 @@ const FiliereView: FunctionComponent<Props> = props => {
           "Ouverture d'inscription",
           inscription_open + ' - ' + inscription_close,
         )}
+        {addEntry('Admission', admission)}
         <Text style={styles.titleText}>{'Dossiers'}</Text>
         <View style={styles.container}>
           <FlatList
@@ -99,6 +153,12 @@ const FiliereView: FunctionComponent<Props> = props => {
         )}
         {addEntry('', '')}
       </ScrollView>
+      <TouchableIcon
+        onPress={onHeartPress}
+        style={styles.bookmark}
+        name={state.icon}
+        size={30}
+      />
     </View>
   );
 };
@@ -128,6 +188,14 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 18,
     height: 44,
+  },
+  bookmark: {
+    position: 'absolute',
+    width: 50,
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    right: 30,
   },
 });
 
