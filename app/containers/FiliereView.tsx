@@ -41,8 +41,6 @@ const FiliereView: FunctionComponent<Props> = props => {
   const [faculty, setFaculty] = useState<string>('');
   const [admission, setAdmission] = useState<string>('');
 
-  let myfiliere = MyFiliere.getByName('MonFiliere')!;
-
   useEffect(() => {
     let filiere = Filiere.getById(filiereId)!;
     setName(filiere.filiere);
@@ -95,35 +93,21 @@ const FiliereView: FunctionComponent<Props> = props => {
 
     // }
     if (state.liked) {
-      MyFiliere.removeFiliere(myfiliere, Filiere.getById(filiereId)!);
+      MyFiliere.removeFiliere(Filiere.getById(filiereId)!);
     } else {
-      MyFiliere.addFiliere(myfiliere, Filiere.getById(filiereId)!);
+      MyFiliere.addFiliere(Filiere.getById(filiereId)!);
     }
 
     state.liked === false
       ? setState({icon: 'bookmark', liked: true})
       : setState({icon: 'bookmark-outline', liked: false});
-    // if (state.liked) {;
-    // } else {
-    //   MyFiliere.addFiliere(myfiliere, Filiere.getById(filiereId)!);
-    // }
   }
 
   useEffect(() => {
-    if (MyFiliere.hasFiliere(myfiliere, Filiere.getById(filiereId)!)) {
+    if (MyFiliere.hasFiliere(Filiere.getById(filiereId)!)) {
       setState({icon: 'bookmark', liked: true});
     }
   }, []);
-
-  // useLayoutEffect(() => {
-  //   navigation.setOptions({
-  //     headerRight: () => (
-  //       <View style={{flexDirection: 'row'}}>
-  //         <TouchableIcon onPress={() => onHeartPress()} name={state.icon} />
-  //       </View>
-  //     ),
-  //   });
-  // }, [navigation]);
 
   return (
     <View style={styles.content}>

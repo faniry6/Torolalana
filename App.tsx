@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler';
 import React, {useContext, useState, useEffect} from 'react';
 import AppNavigation from './app/AppNavigation';
+import FirstUseView from './app/containers/FirstUseView';
 import {NavigationContainer} from '@react-navigation/native';
 import LanguageContext, {
   LanguageProvider,
@@ -59,26 +60,3 @@ const App = () => {
   );
 };
 export default App;
-
-// export default class App extends React.Component {
-//   const [isLoaded, setIsLoaded] = useState(false);
-//   render() {
-//     return (
-//       <AnimatedSplash
-//         translucent={true}
-//         isLoaded={this.state.isLoaded}
-//         logoImage={require('./app/assets/logo/fianarako-1000x1147.png')}
-//         backgroundColor={'white'}
-//         logoHeight={150}
-//         logoWidth={150}>
-//         <LanguageProvider>
-//           <LoadLanguage />
-//           <LoadDatabase />
-//           <NavigationContainer>
-//             <AppNavigation />
-//           </NavigationContainer>
-//         </LanguageProvider>
-//       </AnimatedSplash>
-//     );
-//   }
-// }

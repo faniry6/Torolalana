@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   Text,
@@ -6,6 +6,7 @@ import {
   FlatList,
   StatusBar,
   Dimensions,
+  Alert,
 } from 'react-native';
 import ListItem from '../components/ListItem';
 import {RootStackParamList, MainTabParamList} from '../AppNavigation';
@@ -17,6 +18,7 @@ import CustomHeader from '../components/CustomHeader';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Bacc} from '../db';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import FirstUseView from './FirstUseView';
 
 var randomColor = require('randomcolor');
 
@@ -34,6 +36,20 @@ const BaccList = (props: Props) => {
   function onSelectBacc(id: string, filter: string) {
     props.navigation.navigate('FiliereListView', {id, filter});
   }
+
+  // function goToUpdatePage() {}
+
+  // useEffect(() => {
+  //   Alert.alert(
+  //     'Première utilisation',
+  //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+  //     [
+  //       {text: 'Oui', onPress: () => goToUpdatePage()},
+  //       {text: 'Plus tard', onPress: () => console.log('OK Pressed')},
+  //     ],
+  //     {cancelable: false},
+  //   );
+  // }, []);
 
   return (
     <SafeAreaView style={{flex: 1}}>
@@ -54,6 +70,7 @@ const BaccList = (props: Props) => {
           );
         }}
       />
+      <FirstUseView />
     </SafeAreaView>
   );
 };

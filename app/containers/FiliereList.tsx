@@ -1,11 +1,8 @@
-import React, {useEffect, useState, useCallback} from 'react';
-import {View, StyleSheet, FlatList, StatusBar, Dimensions} from 'react-native';
+import React, {useState, useCallback} from 'react';
+import {FlatList, StatusBar} from 'react-native';
 import {Filiere} from '../db';
 import ListItem from '../components/ListItem';
-import TextInputModal from '../components/TextInputModal';
-import EmptyListMessage from '../components/EmptyListMessage';
 import {RootStackParamList, MainTabParamList} from '../AppNavigation';
-import LanguageContext from '../languages/LanguageContext';
 import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
 import {
   CompositeNavigationProp,
@@ -14,7 +11,6 @@ import {
 import {StackNavigationProp} from '@react-navigation/stack';
 import CustomHeader from '../components/CustomHeader';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {alertDelete} from '../utils/alertDelete';
 
 type FiliereListScreenNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<MainTabParamList, 'FiliereList'>,
@@ -30,9 +26,9 @@ const FiliereList = (props: Props) => {
 
   useFocusEffect(
     useCallback(() => {
-      setFiliere(Filiere.getAll())
-    }, [])
-  )
+      setFiliere(Filiere.getAll());
+    }, []),
+  );
 
   function onSelectFiliere(id: string, name: string) {
     props.navigation.navigate('FiliereView', {id, name});

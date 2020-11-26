@@ -1,25 +1,18 @@
-import React, {
-  useState,
-  useEffect,
-  FunctionComponent,
-  useContext,
-  useLayoutEffect,
-  useCallback,
-} from 'react';
-import {FlatList, View, TouchableOpacity, Text, StyleSheet} from 'react-native';
-import ListItem, {LeftIconOptions} from '../components/ListItem';
-import {MyFiliere, SortBy} from '../db/MyFiliere';
+import React, {useState, useCallback} from 'react';
+import {
+  FlatList,
+  View,
+  TouchableOpacity,
+  Text,
+  StyleSheet,
+  Alert,
+} from 'react-native';
+import {MyFiliere} from '../db/MyFiliere';
 import TouchableIcon from '../components/TouchableIcon';
 import EmptyListMessage from '../components/EmptyListMessage';
-import PrimaryButton from '../components/PrimaryButton';
-import LanguageContext from '../languages/LanguageContext';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import PickerModal, {PickerOption} from '../components/PickerModal';
 import {Filiere} from '../db';
-import {List, Results} from 'realm';
 import {StackNavigationProp} from '@react-navigation/stack';
-import {RouteProp, useFocusEffect} from '@react-navigation/native';
-import {alertDelete} from '../utils/alertDelete';
+import {useFocusEffect} from '@react-navigation/native';
 import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
 import {CompositeNavigationProp} from '@react-navigation/native';
 import {RootStackParamList, MainTabParamList} from '../AppNavigation';
@@ -36,13 +29,11 @@ type Props = {
 };
 
 const MyFiliereList = (props: Props) => {
-  const [myfiliere, setFilieres] = useState<MyFiliere>(
-    MyFiliere.getByName('MonFiliere')!,
-  );
+  const [myfiliere, setFilieres] = useState<MyFiliere>(MyFiliere.get()!);
 
   function onPressRemoveFiliere(id: string) {
-    MyFiliere.removeFiliere(myfiliere, Filiere.getById(id)!);
-    setFilieres(MyFiliere.getByName('MonFiliere')!);
+    MyFiliere.removeFiliere(Filiere.getById(id)!);
+    setFilieres(MyFiliere.get()!);
   }
 
   function onSelectFiliere(id: string, name: string) {
@@ -51,7 +42,7 @@ const MyFiliereList = (props: Props) => {
 
   useFocusEffect(
     useCallback(() => {
-      setFilieres(MyFiliere.getByName('MonFiliere')!);
+      setFilieres(MyFiliere.get()!);
     }, []),
   );
 
