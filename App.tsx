@@ -1,24 +1,11 @@
 import 'react-native-gesture-handler';
-import React, {useContext, useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import AppNavigation from './app/AppNavigation';
-import FirstUseView from './app/containers/FirstUseView';
 import {NavigationContainer} from '@react-navigation/native';
-import LanguageContext, {
-  LanguageProvider,
-} from './app/languages/LanguageContext';
-import {GlobalSettings} from './app/db/GlobalSettings';
 import {Filiere} from './app/db/Filiere';
 import {Bacc} from './app/db';
 import AnimatedSplash from 'react-native-animated-splash-screen';
-
-const LoadLanguage = () => {
-  const {changeLanguage} = useContext(LanguageContext);
-  useEffect(() => {
-    let {language} = GlobalSettings.get();
-    changeLanguage(language);
-  }, []);
-  return null;
-};
+import {View} from 'react-native';
 
 const LoadDatabase = () => {
   useEffect(() => {
@@ -49,13 +36,10 @@ const App = () => {
       logoImage={require('./app/assets/logo/uni-tana.png')}
       logoHeight={150}
       logoWidth={150}>
-      <LanguageProvider>
-        <LoadLanguage />
+      <NavigationContainer>
         <LoadDatabase />
-        <NavigationContainer>
-          <AppNavigation />
-        </NavigationContainer>
-      </LanguageProvider>
+        <AppNavigation />
+      </NavigationContainer>
     </AnimatedSplash>
   );
 };
