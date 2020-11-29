@@ -2,7 +2,7 @@
 
 # Torolalana
 
-Cross-platform app for Android and iOS written with React Native. Based on the OpenChord app by [Artur Miranda](https://github.com/artutra)
+Cross-platform app for Android and iOS written with React Native to help Malagasy student.
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
@@ -70,3 +70,7 @@ If you find any problems, feature requests, please open an issue or submit a fix
 ## :newspaper: License
 
 [GNU General Public License v3.0](LICENSE)
+
+## :credit: Credits
+
+Devloped by [Ra Faniry](https://github.com/faniry6). Based on the opensource [OpenChord](https://github.com/artutra) app.
