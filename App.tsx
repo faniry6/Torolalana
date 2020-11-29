@@ -5,7 +5,6 @@ import {NavigationContainer} from '@react-navigation/native';
 import {Filiere} from './app/db/Filiere';
 import {Bacc} from './app/db';
 import AnimatedSplash from 'react-native-animated-splash-screen';
-import {View} from 'react-native';
 
 const LoadDatabase = () => {
   useEffect(() => {
