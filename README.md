@@ -73,4 +73,5 @@ If you find any problems, feature requests, please open an issue or submit a fix
 
 ## :credit: Credits
 
-Devloped by [Ra Faniry](https://github.com/faniry6). Based on the opensource [OpenChord](https://github.com/artutra) app.
+C
+Devloped by [Ra Faniry](https://github.com/faniry6). Based on the opensource [OpenChord](https://github.com/artutra/OpenChord) app.
