@@ -73,4 +73,4 @@ If you find any problems, feature requests, please open an issue or submit a fix
 
 ## Credits
 
-Devloped by [Ra Faniry](https://github.com/faniry6). Based on the opensource [OpenChord](https://github.com/artutra/OpenChord) app.
+Devloped by [Ra Faniry](https://github.com/faniry6). Based on the opensource [GasyTab](https://github.com/faniry6/gasytab) app.
