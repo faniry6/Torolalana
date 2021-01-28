@@ -22,8 +22,7 @@ export default class FianarakoService extends BaseService {
   constructor() {
     super();
     this.name = 'Fianarako';
-    this.baseUrl =
-      'https://by4tg2z1s4.execute-api.eu-central-1.amazonaws.com/dev';
+    this.baseUrl = 'Omitted for security - please ask the developper';
   }
 
   async getAll(): Promise<FiliereDoc[]> {
