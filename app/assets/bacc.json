@@ -1,5 +1,5 @@
 {
-  "updated_at": "2020-10-25T09:50:02.783Z",
+  "updated_at": "2021-10-25T09:50:02.783Z",
   "data": [
     {"id": "1", "serie": "A1"},
     {"id": "2", "serie": "A2"},
@@ -8,6 +8,8 @@
     {"id": "5", "serie": "TI"},
     {"id": "6", "serie": "TGC"},
     {"id": "7", "serie": "TA"},
-    {"id": "8", "serie": "TT"}
+    {"id": "8", "serie": "TT"},
+    {"id": "9", "serie": "L"},
+    {"id": "10", "serie": "S"}
   ]
 }

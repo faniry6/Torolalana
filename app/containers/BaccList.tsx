@@ -19,6 +19,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {Bacc} from '../db';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import FirstUseView from './FirstUseView';
+import {Avatar} from 'react-native-elements';
 
 var randomColor = require('randomcolor');
 
@@ -36,26 +37,100 @@ const BaccList = (props: Props) => {
   function onSelectBacc(id: string, filter: string) {
     props.navigation.navigate('FiliereListView', {id, filter});
   }
-
-  // function goToUpdatePage() {}
-
-  // useEffect(() => {
-  //   Alert.alert(
-  //     'Première utilisation',
-  //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
-  //     [
-  //       {text: 'Oui', onPress: () => goToUpdatePage()},
-  //       {text: 'Plus tard', onPress: () => console.log('OK Pressed')},
-  //     ],
-  //     {cancelable: false},
-  //   );
-  // }, []);
-
+  const width = Dimensions.get('window').width / 4;
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       <StatusBar barStyle="dark-content" backgroundColor="white" />
       <CustomHeader title={'Choisissez votre serie Bacc'} />
-      <FlatList
+      <View
+        style={{
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+          marginTop: 10,
+        }}>
+        <Avatar
+          containerStyle={styles.serie}
+          size={width}
+          title="A1"
+          onPress={() =>
+            props.navigation.navigate('FiliereListView', {id: '', filter: 'A1'})
+          }
+          activeOpacity={0.7}
+        />
+        <Avatar
+          containerStyle={styles.serie}
+          size={width}
+          title="A2"
+          onPress={() => console.log('Works!')}
+          activeOpacity={0.7}
+        />
+        <Avatar
+          containerStyle={styles.serie}
+          size={width}
+          title="C"
+          onPress={() =>
+            props.navigation.navigate('FiliereListView', {id: '', filter: 'C'})
+          }
+          activeOpacity={0.7}
+        />
+        <Avatar
+          containerStyle={styles.serie}
+          size={width}
+          title="D"
+          onPress={() => console.log('Works!')}
+          activeOpacity={0.7}
+        />
+        <Avatar
+          containerStyle={styles.serie}
+          size={width}
+          title="TI"
+          onPress={() => console.log('Works!')}
+          activeOpacity={0.7}
+        />
+        <Avatar
+          containerStyle={styles.serie}
+          size={width}
+          title="TGC"
+          onPress={() => console.log('Works!')}
+          activeOpacity={0.7}
+        />
+        <Avatar
+          containerStyle={styles.serie}
+          size={width}
+          title="TA"
+          onPress={() => console.log('Works!')}
+          activeOpacity={0.7}
+        />
+        <Avatar
+          containerStyle={styles.serie}
+          size={width}
+          title="TT"
+          onPress={() => console.log('Works!')}
+          activeOpacity={0.7}
+        />
+        <Avatar
+          containerStyle={styles.serie}
+          size={width}
+          title="L"
+          onPress={() =>
+            props.navigation.navigate('FiliereListView', {id: '', filter: 'L'})
+          }
+          activeOpacity={0.7}
+        />
+        <Avatar
+          containerStyle={styles.serie}
+          size={width}
+          title="S"
+          onPress={() =>
+            props.navigation.navigate('FiliereListView', {id: '', filter: 'S'})
+          }
+          activeOpacity={0.7}
+        />
+      </View>
+      {/* <FlatList
         data={bacc}
         numColumns={3}
         renderItem={({item, index}) => {
@@ -69,7 +144,7 @@ const BaccList = (props: Props) => {
             </TouchableOpacity>
           );
         }}
-      />
+      /> */}
       <FirstUseView />
     </SafeAreaView>
   );
@@ -94,6 +169,14 @@ const styles = StyleSheet.create({
   itemText: {
     color: 'black',
     fontSize: Dimensions.get('window').width / 20,
+  },
+
+  serie: {
+    backgroundColor: 'green',
+    margin: 2,
+    borderRadius: 0,
+    padding: 0,
+    fontSize: 2,
   },
 });
 

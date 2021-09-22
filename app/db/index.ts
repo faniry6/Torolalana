@@ -6,7 +6,7 @@ import {MyFiliere} from './MyFiliere';
 
 var realm = new Realm({
   schema: [Filiere.schema, Bacc.schema, Info.schema, MyFiliere.schema],
-  schemaVersion: 8,
+  schemaVersion: 9,
   migration: () => {},
 });
 export default realm;

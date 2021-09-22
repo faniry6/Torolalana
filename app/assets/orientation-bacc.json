@@ -1,0 +1,585 @@
+[
+  {
+    "filiere": "Mathematique & Informatique",
+    "bacc": ["C"],
+    "location": "Antananarivo",
+    "domaine": "Sciences et Technologies",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Sélection sur dossier",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+  {
+    "filiere": "Physique & Chimie",
+    "bacc": ["C", "D", "TI", "TGC"],
+    "location": "Antananarivo",
+    "domaine": "Sciences et Technologies",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Sélection sur dossier",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Science de la Vie et de la Terre",
+    "bacc": ["C", "D"],
+    "location": "Antananarivo",
+    "domaine": "Sciences et Technologies",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Sélection sur dossier",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Economie",
+    "bacc": ["A1", "A2", "C", "D", "TA", "TT"],
+    "location": "Antananarivo",
+    "domaine": "Science de la société (EGS)",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Test d'accès",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Gestion",
+    "bacc": ["A1", "A2", "C", "D", "TA", "TT"],
+    "location": "Antananarivo",
+    "domaine": "Science de la société (EGS)",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Test d'accès",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Gestion: FOAD",
+    "bacc": ["A1", "A2", "C", "D", "TA", "TT"],
+    "location": "Antananarivo",
+    "domaine": "Science de la société (EGS)",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Sélection sur dossier",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Sociologie",
+    "bacc": ["A1", "A2", "C", "D", "TA", "TT"],
+    "location": "Antananarivo",
+    "domaine": "Science de la société (EGS)",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Test d'accès",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Sociologie: Formation Professionnalisante",
+    "bacc": ["A1", "A2", "C", "D", "TA", "TT"],
+    "location": "Antananarivo",
+    "domaine": "Science de la société (EGS)",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Test d'accès",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Droit",
+    "bacc": ["A1", "A2", "C", "D", "TA", "TT"],
+    "location": "Antananarivo",
+    "domaine": "Science de la société (faculté de droit et des sciences politiques)",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Test d'accès",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Sciences Politiques",
+    "bacc": ["A1", "A2", "C", "D", "TA", "TT"],
+    "location": "Antananarivo",
+    "domaine": "Science de la société (faculté de droit et des sciences politiques)",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Test d'accès",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Etudes Malgaches",
+    "bacc": ["A1", "A2", "C", "D", "TA", "TI", "TGC", "TT"],
+    "location": "Antananarivo",
+    "domaine": "Art, Lettres et Sciences Humaines",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Test d'accès",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Etudes Anglophones",
+    "bacc": ["A1", "A2", "C", "D", "TA", "TI", "TGC", "TT"],
+    "location": "Antananarivo",
+    "domaine": "Art, Lettres et Sciences Humaines",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Test d'accès",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Etudes Françaises et Francophones",
+    "bacc": ["A1", "A2", "C", "D", "TA", "TI", "TGC", "TT"],
+    "location": "Antananarivo",
+    "domaine": "Art, Lettres et Sciences Humaines",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Test d'accès",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Etudes Germaniques",
+    "bacc": ["A1", "A2", "C", "D", "TA", "TI", "TGC", "TT"],
+    "location": "Antananarivo",
+    "domaine": "Art, Lettres et Sciences Humaines",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Test d'accès",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Langues Etrangères",
+    "bacc": ["A1", "A2", "C", "D", "TA", "TI", "TGC", "TT"],
+    "location": "Antananarivo",
+    "domaine": "Art, Lettres et Sciences Humaines",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Test d'accès",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Anthropologies",
+    "bacc": ["A1", "A2", "C", "D", "TA", "TI", "TGC", "TT"],
+    "location": "Antananarivo",
+    "domaine": "Art, Lettres et Sciences Humaines",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Test d'accès",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Communication, Médiation, Médias et Organisations ",
+    "bacc": ["A1", "A2", "C", "D", "TA", "TI", "TGC", "TT"],
+    "location": "Antananarivo",
+    "domaine": "Art, Lettres et Sciences Humaines",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Test d'accès",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Géographie",
+    "bacc": ["A1", "A2", "C", "D", "TA", "TI", "TGC", "TT"],
+    "location": "Antananarivo",
+    "domaine": "Art, Lettres et Sciences Humaines",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Test d'accès",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Histoire, Sciences des savoirs et des sociétés en développement",
+    "bacc": ["A1", "A2", "C", "D", "TA", "TI", "TGC", "TT"],
+    "location": "Antananarivo",
+    "domaine": "Art, Lettres et Sciences Humaines",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Test d'accès",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "philosophie",
+    "bacc": ["A1", "A2", "C", "D", "TA", "TI", "TGC", "TT"],
+    "location": "Antananarivo",
+    "domaine": "Art, Lettres et Sciences Humaines",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Test d'accès",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Sciences du Tourisme",
+    "bacc": ["A1", "A2", "C", "D", "TA", "TI", "TGC", "TT"],
+    "location": "Antananarivo",
+    "domaine": "Art, Lettres et Sciences Humaines",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Test d'accès",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Médecine Humaine",
+    "bacc": ["C", "D"],
+    "location": "Antananarivo",
+    "domaine": "Sciences de la Santé (Faculté de Médecine)",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Sélection sur dossier",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Pharmacie",
+    "bacc": ["C", "D"],
+    "location": "Antananarivo",
+    "domaine": "Sciences de la Santé (Faculté de Médecine)",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Sélection sur dossier",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Médecine Vétérinaire",
+    "bacc": ["C", "D"],
+    "location": "Antananarivo",
+    "domaine": "Sciences de la Santé (Faculté de Médecine)",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Sélection sur dossier",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Etudes Pharamédicales",
+    "bacc": ["C", "D"],
+    "location": "Antananarivo",
+    "domaine": "Sciences de la Santé (Faculté de Médecine)",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Sélection sur dossier",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Météorologie",
+    "bacc": ["C", "D", "TI", "TGC"],
+    "location": "Antananarivo",
+    "domaine": "Ecole Supérieure Polytechnique d'Antananarivo",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Concours d'entrée",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Electronique",
+    "bacc": ["C", "D", "TI", "TGC"],
+    "location": "Antananarivo",
+    "domaine": "Ecole Supérieure Polytechnique d'Antananarivo",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Concours d'entrée",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Génie géologique",
+    "bacc": ["C", "D", "TI", "TGC"],
+    "location": "Antananarivo",
+    "domaine": "Ecole Supérieure Polytechnique d'Antananarivo",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Concours d'entrée",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Inénierie minière",
+    "bacc": ["C", "D", "TI", "TGC"],
+    "location": "Antananarivo",
+    "domaine": "Ecole Supérieure Polytechnique d'Antananarivo",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Concours d'entrée",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "batiment et Travaux Publics (BPT)",
+    "bacc": ["C", "D", "TI", "TGC"],
+    "location": "Antananarivo",
+    "domaine": "Ecole Supérieure Polytechnique d'Antananarivo",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Concours d'entrée",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Génie éléctrique",
+    "bacc": ["C", "D", "TI", "TGC"],
+    "location": "Antananarivo",
+    "domaine": "Ecole Supérieure Polytechnique d'Antananarivo",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Concours d'entrée",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Information géographique et aménagement de territoire (IGAT)",
+    "bacc": ["C", "D", "TI", "TGC"],
+    "location": "Antananarivo",
+    "domaine": "Ecole Supérieure Polytechnique d'Antananarivo",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Concours d'entrée",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Télécommunication",
+    "bacc": ["C", "D", "TI", "TGC"],
+    "location": "Antananarivo",
+    "domaine": "Ecole Supérieure Polytechnique d'Antananarivo",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Concours d'entrée",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Ingénierie petrolière",
+    "bacc": ["C", "D", "TI", "TGC"],
+    "location": "Antananarivo",
+    "domaine": "Ecole Supérieure Polytechnique d'Antananarivo",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Concours d'entrée",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Génie des procedés chimiques et industriels",
+    "bacc": ["C", "D", "TI", "TGC"],
+    "location": "Antananarivo",
+    "domaine": "Ecole Supérieure Polytechnique d'Antananarivo",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Concours d'entrée",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Sciences et Ingénierie des Matériaux (SIM)",
+    "bacc": ["C", "D", "TI", "TGC"],
+    "location": "Antananarivo",
+    "domaine": "Ecole Supérieure Polytechnique d'Antananarivo",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Concours d'entrée",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Génie Mécanique et Industriel (GMI)",
+    "bacc": ["C", "D", "TI", "TGC"],
+    "location": "Antananarivo",
+    "domaine": "Ecole Supérieure Polytechnique d'Antananarivo",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Concours d'entrée",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Hydraulique",
+    "bacc": ["C", "D", "TI", "TGC"],
+    "location": "Antananarivo",
+    "domaine": "Ecole Supérieure Polytechnique d'Antananarivo",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Concours d'entrée",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  },
+
+  {
+    "filiere": "Sciences agronomiques et environnementales",
+    "bacc": ["C", "D", "TA"],
+    "location": "Antananarivo",
+    "domaine": "Ecole Supérieure des Sciences Agronomiques",
+    "description": " ",
+    "inscription_open": "1 Oct",
+    "inscription_closed": "2 Oct",
+    "admission": "Concours d'entrée",
+    "document": "03 Photos récentes\nDemande manuscrit signé\nCopie d'acte de naissance\nRelevé de note\nQuittance BNI",
+    "fees": "20 000 Ar",
+    "bank_account": " ",
+    "bank_account_owner": " "
+  }
+]
