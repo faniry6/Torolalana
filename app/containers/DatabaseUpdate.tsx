@@ -51,11 +51,17 @@ export const DatabaseUpdate: FC<{}> = props => {
             } else {
               // check timestamp and compare
               let local_date = new Date(local_filiere.updated_at);
+              console.log(server_filiere.bacc);
+
               if (local_date < server_date) {
+                Alert.alert(
+                  'Updating',
+                  server_filiere.filiere + ' ' + server_filiere.bacc.length,
+                );
                 realm.write(() => {
                   local_filiere!.filiere = server_filiere.filiere;
                   local_filiere!.description = server_filiere.description;
-                  local_filiere!.bacc != server_filiere.bacc;
+                  local_filiere!.bacc = server_filiere.bacc;
                   local_filiere!.location = server_filiere.location;
                   local_filiere!.updated_at = server_filiere.updated_at;
                   local_filiere!.inscription_open =
