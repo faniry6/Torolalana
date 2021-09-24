@@ -69,6 +69,7 @@ const MyFiliereList = (props: Props) => {
                 <Text style={styles.subtitle}>{item.location}</Text>
               </View>
               <TouchableIcon
+                color="white"
                 onPress={() => {
                   onPressRemoveFiliere(item.id!);
                 }}
@@ -97,11 +98,12 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     borderBottomWidth: 1,
     borderColor: '#eee',
-    backgroundColor: 'white',
+    backgroundColor: 'green',
     justifyContent: 'space-between',
   },
   title: {
     fontSize: 18,
+    color: 'white',
   },
   textContainer: {
     flex: 1,
@@ -110,6 +112,7 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 14,
+    color: 'white',
   },
 });
 export default MyFiliereList;

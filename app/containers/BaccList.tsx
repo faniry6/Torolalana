@@ -44,107 +44,27 @@ const BaccList = (props: Props) => {
       <CustomHeader title={'Choisissez votre serie Bacc'} />
       <View
         style={{
-          flexDirection: 'row',
-          flexWrap: 'wrap',
           flex: 1,
           justifyContent: 'center',
           alignItems: 'center',
-          marginTop: 10,
+          margin: 1,
         }}>
-        <Avatar
-          containerStyle={styles.serie}
-          size={width}
-          title="A1"
-          onPress={() =>
-            props.navigation.navigate('FiliereListView', {id: '', filter: 'A1'})
-          }
-          activeOpacity={0.7}
-        />
-        <Avatar
-          containerStyle={styles.serie}
-          size={width}
-          title="A2"
-          onPress={() => console.log('Works!')}
-          activeOpacity={0.7}
-        />
-        <Avatar
-          containerStyle={styles.serie}
-          size={width}
-          title="C"
-          onPress={() =>
-            props.navigation.navigate('FiliereListView', {id: '', filter: 'C'})
-          }
-          activeOpacity={0.7}
-        />
-        <Avatar
-          containerStyle={styles.serie}
-          size={width}
-          title="D"
-          onPress={() => console.log('Works!')}
-          activeOpacity={0.7}
-        />
-        <Avatar
-          containerStyle={styles.serie}
-          size={width}
-          title="TI"
-          onPress={() => console.log('Works!')}
-          activeOpacity={0.7}
-        />
-        <Avatar
-          containerStyle={styles.serie}
-          size={width}
-          title="TGC"
-          onPress={() => console.log('Works!')}
-          activeOpacity={0.7}
-        />
-        <Avatar
-          containerStyle={styles.serie}
-          size={width}
-          title="TA"
-          onPress={() => console.log('Works!')}
-          activeOpacity={0.7}
-        />
-        <Avatar
-          containerStyle={styles.serie}
-          size={width}
-          title="TT"
-          onPress={() => console.log('Works!')}
-          activeOpacity={0.7}
-        />
-        <Avatar
-          containerStyle={styles.serie}
-          size={width}
-          title="L"
-          onPress={() =>
-            props.navigation.navigate('FiliereListView', {id: '', filter: 'L'})
-          }
-          activeOpacity={0.7}
-        />
-        <Avatar
-          containerStyle={styles.serie}
-          size={width}
-          title="S"
-          onPress={() =>
-            props.navigation.navigate('FiliereListView', {id: '', filter: 'S'})
-          }
-          activeOpacity={0.7}
+        <FlatList
+          data={bacc}
+          numColumns={3}
+          renderItem={({item, index}) => {
+            return (
+              <TouchableOpacity
+                style={[styles.item]}
+                onPress={() => onSelectBacc(item.id!, item.serie)}>
+                <View>
+                  <Text style={styles.itemText}>{item.serie}</Text>
+                </View>
+              </TouchableOpacity>
+            );
+          }}
         />
       </View>
-      {/* <FlatList
-        data={bacc}
-        numColumns={3}
-        renderItem={({item, index}) => {
-          return (
-            <TouchableOpacity
-              style={[styles.item, {backgroundColor: randomColor()}]}
-              onPress={() => onSelectBacc(item.id!, item.serie)}>
-              <View>
-                <Text style={styles.itemText}>{item.serie}</Text>
-              </View>
-            </TouchableOpacity>
-          );
-        }}
-      /> */}
       <FirstUseView />
     </SafeAreaView>
   );
@@ -155,20 +75,23 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
   item: {
-    backgroundColor: 'grey',
+    backgroundColor: 'green',
     alignItems: 'center',
     justifyContent: 'center',
+    borderRadius: 100,
+    //flexDirection: 'row',
+    //flexWrap: 'wrap',
     flex: 1,
     margin: 1,
-    height: Dimensions.get('window').width / 3, // approximate a square
-    width: Dimensions.get('window').width / 3,
+    height: Dimensions.get('window').width / 4, // approximate a square
+    width: Dimensions.get('window').width / 4,
   },
   itemInvisible: {
     backgroundColor: 'transparent',
   },
   itemText: {
-    color: 'black',
-    fontSize: Dimensions.get('window').width / 20,
+    color: 'white',
+    fontSize: Dimensions.get('window').width / 10,
   },
 
   serie: {
