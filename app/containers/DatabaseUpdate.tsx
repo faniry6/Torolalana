@@ -129,7 +129,8 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   appButtonContainer: {
-    backgroundColor: 'seagreen',
+    backgroundColor: 'green',
+    borderRadius: 100,
     paddingVertical: 10,
     paddingHorizontal: 12,
     marginLeft: '20%',
@@ -137,7 +138,7 @@ const styles = StyleSheet.create({
   },
   appButtonText: {
     fontSize: 14,
-    color: '#fff',
+    color: 'white',
     fontWeight: 'bold',
     alignSelf: 'center',
     textTransform: 'uppercase',
