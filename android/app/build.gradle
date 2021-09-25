@@ -133,8 +133,8 @@ android {
         applicationId "com.torolalana"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 12
-        versionName "0.5.1"
+        versionCode 13
+        versionName "0.2.0"
     }
     splits {
         abi {
@@ -202,7 +202,7 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
-
+    implementation "com.facebook.soloader:soloader:0.9.0+"
     if (enableHermes) {
       def hermesPath = "../../node_modules/hermesvm/android/";
       debugImplementation files(hermesPath + "hermes-debug.aar")

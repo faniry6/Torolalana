@@ -62,6 +62,7 @@ const FiliereView: FunctionComponent<Props> = props => {
     for (let e in bacc) {
       s += bacc[e] + ', ';
     }
+    console.log(s);
     return s.slice(0, -2);
   }
 

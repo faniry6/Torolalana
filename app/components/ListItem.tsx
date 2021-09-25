@@ -47,8 +47,10 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     borderBottomWidth: 1,
     borderColor: '#eee',
-    backgroundColor: 'white',
+    backgroundColor: 'green',
+    borderRadius: 100,
     justifyContent: 'space-between',
+    margin: 5,
   },
   textContainer: {
     flex: 1,
@@ -57,6 +59,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
+    color: 'white',
   },
   subtitle: {
     fontSize: 14,
