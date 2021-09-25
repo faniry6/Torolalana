@@ -60,8 +60,6 @@ Obs: The docker container can't attatch to the device via USB. You have to build
 - [React Navigation v4.0](https://reactnavigation.org) - React Native module support navigation
 - [React Native Vector Icons v6.6](https://github.com/oblador/react-native-vector-icons) - Customizable Icons for React Native with support for NavBar/TabBar/ToolbarAndroid, image source and full styling
 - [React Native Webview](https://github.com/react-native-community/react-native-webview) - A modern, well-supported, and cross-platform WebView for React Native
-- [ChordSheetJS](https://github.com/martijnversluis/ChordSheetJS) - A JavaScript library for parsing and formatting chord sheets
-- [ChordPro](https://www.chordpro.org/chordpro/index.html) - A text file format to write lead sheets, songs with lyrics and chords
 
 ## :raising_hand: How can you help
 
@@ -73,4 +71,4 @@ If you find any problems, feature requests, please open an issue or submit a fix
 
 ## Credits
 
-Developed by [Ra Faniry](https://github.com/faniry6). Based on the opensource [GasyTab](https://github.com/faniry6/gasytab) app.
+Developed by [Ra Faniry](https://github.com/faniry6).
